@@ -1,8 +1,14 @@
 const analyzer = {  
   getWordCount: (text) => {
     //TODO: esta función debe retornar el recuento de palabras que se encuentran en el parámetro `text` de tipo `string`.
+    const sinEspacios= text.trim()
+    const convertirEnArray = sinEspacios.split(" ")   
+    const contador = convertirEnArray.length
+   // console.log(contador);
+   return contador;
   },
-  getCharacterCount: (text) => {
+  getCharacterCount: (text) => { // parametro
+    
     //TODO: esta función debe retornar el recuento de caracteres que se encuentran en el parámetro `text` de tipo `string`.
   },
   getCharacterCountExcludingSpaces: (text) => {

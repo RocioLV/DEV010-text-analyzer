@@ -12,7 +12,8 @@ body {
     align-items: center;
     height: 100vh;
     text-align: center;
-    background: url(img/library2.jpg) no-repeat center/cover;
+    /* background: url(img/library2.jpg) no-repeat center/cover; */
+    background: #db5b12a8;
 }
 
 ul {
@@ -54,9 +55,9 @@ textarea:hover {
 .metrics {
     background:fixed;
     border: 2px solid transparent;
-    margin: 10px;
-    padding: 10px;
-    font-size: 10px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 15px;
     color: white;
     width: 50vh;
     height: 15vh;
@@ -64,20 +65,25 @@ textarea:hover {
     align-items: center;
     border-radius: 10px;
     justify-content: center;
-    display: flex;
+    display:inline-flex;
 }
 
 #reset-button {
     height: 50px;
     width: 200px;
     align-items: center;
-    background-color: #faa1a1;
+    background-color: #a25f9c;
     color:black;
     border-radius: 10px;
     border: 3px #666666;
 }
 
+#reset-button:hover {
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: #e1a8db;
+}
+
 footer {
     color: white;
-
 }

@@ -16,12 +16,14 @@
     <h1>🔍 Analizador de texto</h1>
   </header>
 
-  <textarea name="user-input" rows="4" cols="50" placeholder="Ingresa un texto...">
-  </textarea><br>
+  <div>
+    <textarea input="text" name="user-input" rows="4" cols="50" placeholder="Ingresar texto...">
+    </textarea><br>
+  </div>
 
   <main>
     <ul>
-      <li  class="metrics" data-testid="word-acount">Palabras:</li>
+      <li  class="metrics" data-testid="word-count">Palabras:<span></span></li>
       <li  class="metrics" data-testid="character-count">Caracteres:</li>
       <li  class="metrics" data-testid="character-no-spaces-count">Caracteres excluyendo espacios y signos de puntuación:</li>
       <li  class="metrics" data-testid="number-count">Números:</li>
@@ -30,14 +32,14 @@
     </ul>
   </main><br>
 
-  <button type="reset" id="reset-button">Limpiar texto</button>
+  <button type=reset id="reset-button">Limpiar texto</button><br>
 
-  <script src="index.js"></script>
+  <script src="index.js" type="module"></script>
 </body><br>
 
 <footer><br>
   <p>
-    Creadora: Rocío Lorca
+    Rocío Lorca © 2023
   </p>
 </footer>
 
