@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Analizador de texto</title>
-  <link rel="icon" type="image/png" href="img/abacus.png">
+  <link rel="icon" type="image/png" href="img/monocle.png">
   <link rel="stylesheet" href="style.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
@@ -13,28 +13,29 @@
 
 <body>
   <header>
-    <h1>🔍 Analizador de texto</h1>
+    <h1>🧐 Analizador de texto</h1>
   </header>
 
   <div>
-    <textarea input="text" name="user-input" rows="4" cols="50" placeholder="Ingresar texto...">
+    <textarea name="user-input" rows="4" cols="50" placeholder="Ingresar texto...">
     </textarea><br>
   </div>
 
   <main>
     <ul>
-      <li  class="metrics" data-testid="word-count">Palabras:<span></span></li>
-      <li  class="metrics" data-testid="character-count">Caracteres:</li>
-      <li  class="metrics" data-testid="character-no-spaces-count">Caracteres excluyendo espacios y signos de puntuación:</li>
-      <li  class="metrics" data-testid="number-count">Números:</li>
-      <li  class="metrics" data-testid="number-sum">Suma total de números:</li>
-      <li  class="metrics" data-testid="word-length-average">Longitud media de las palabras:</li>
+      <li  class="metrics" data-testid="word-count"></li>
+      <li  class="metrics" data-testid="character-count"></li>
+      <li  class="metrics" data-testid="character-no-spaces-count"></li>
+      <li  class="metrics" data-testid="number-count"></li>
+      <li  class="metrics" data-testid="number-sum"></li>
+      <li  class="metrics" data-testid="word-length-average"></li>
     </ul>
   </main><br>
 
   <button type=reset id="reset-button">Limpiar texto</button><br>
 
   <script src="index.js" type="module"></script>
+  <script src="analyzer.js" type="module"></script>
 </body><br>
 
 <footer><br>
