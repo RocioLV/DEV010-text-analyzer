@@ -24,8 +24,8 @@ function start() {
   const numSum = analyzer.getNumberSum(text);
 
   // Actualizar los elementos HTML con los resultados
-  document.querySelector('.metrics[data-testid="word-count"]').textContent = "Palabras: " + wordCount;
-  document.querySelector('.metrics[data-testid="character-count"]').textContent = "Caracteres: " + charCount.toString();
+  document.querySelector('.metrics[data-testid="word-count"]').textContent = "Recuento de palabras: " + wordCount;
+  document.querySelector('.metrics[data-testid="character-count"]').textContent = "Recuento de caracteres: " + charCount.toString();
   document.querySelector('.metrics[data-testid="character-no-spaces-count"]').textContent = "Caracteres sin espacios: " + charNoSpaces.toString();
   document.querySelector('.metrics[data-testid="word-length-average"]').textContent = "Longitud media de palabras: " + wordLength.toString();
 
