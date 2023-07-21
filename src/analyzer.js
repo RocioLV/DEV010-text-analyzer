@@ -8,23 +8,23 @@ const analyzer = {
     // return contador
     //TODO: esta función debe retornar el recuento de palabras que se encuentran en el parámetro `text` de tipo `string`.
   
-    const word = text.value.trim().split(" ");
+    const word = text.trim().split(" ");
     const contador = word.length;
     return contador;
   },
   
   getCharacterCount: (text) => { // parametro
     //TODO: esta función debe retornar el recuento de caracteres que se encuentran en el parámetro `text` de tipo `string`.
-    const character = text.value;
+    const character = text;
     return character.length;
   },
 
   getCharacterCountExcludingSpaces: (text) => {
     //TODO: esta función debe retornar el recuento de caracteres excluyendo espacios y signos de puntuación que se encuentran en el parámetro `text` de tipo `string`.
     const noSpaces = text.replace(/ /g, "");
-    // const noPunctuation = noSpaces.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+    const noPunctuation = noSpaces.replace(/[.,/#!$%^&*;:{}=\-_`~()]/g,"");
     // const characterCount = noPunctuation.length;
-    return noSpaces.length;
+    return noPunctuation.length;
     // console.log(characterCount);
 
     //o intentar con esta:
@@ -44,7 +44,10 @@ const analyzer = {
     for (let i = 0; i < words.length; i++) {
       totalLength += words[i].length;  
     }
-    return totalLength / words.length;  
+    // return totalLength / words.length;  
+    const averageLength = totalLength / words.length;
+
+    return averageLength.toFixed(1);
   },
 
   getNumberCount: (text) => {
@@ -58,7 +61,6 @@ const analyzer = {
     }
     return count;
   },
-
 
   getNumberSum: (text) => {
     //TODO: esta función debe retornar la suma de todos los números que se encuentran en el parámetro `text` de tipo `string`.

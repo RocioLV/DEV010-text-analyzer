@@ -12,8 +12,8 @@ body {
     align-items: center;
     height: 100vh;
     text-align: center;
-    /* background: url(img/library2.jpg) no-repeat center/cover; */
-    background: #46244C;
+    background: url(img/library2.jpg) no-repeat center/cover;
+    background: #2A0944;
 }
 
 ul {
@@ -33,12 +33,13 @@ header {
     padding: 30px;
 }
 
+
 textarea[name="user-input"] {
     flex-wrap: wrap;
     background-color: #dddddd;
     color: #666666;
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px;
     width: 70vh;
     height: 30vh;
     margin: 10px;
@@ -52,36 +53,40 @@ textarea:hover {
     background-color: #eee;
 }
 
+ul {
+    background: #A12568;
+}
 .metrics {
-    background:fixed;
+    /* background:fixed; */
     border: 2px solid transparent;
     margin: 5px;
     padding: 5px;
-    font-size: 15px;
+    font-size: 18px;
     color: white;
-    width: 50vh;
+    width: 30vh;
     height: 15vh;
-    background-color: #712B75;
+    background-color: #A12568;
     align-items: center;
     border-radius: 10px;
     justify-content: center;
-    display:inline-flex;
+    display:inline;
 }
 
 #reset-button {
     height: 50px;
     width: 200px;
     align-items: center;
-    background-color: #C74B50;
+    background-color: #FEC260;
     color:black;
     border-radius: 10px;
     border: 3px #666666;
+    font-size: 15px bold;
 }
 
 #reset-button:hover {
   cursor: pointer;
   transition: all 0.2s;
-  background-color: #D49B54;
+  background-color: #3B185F;
 }
 
 footer {
