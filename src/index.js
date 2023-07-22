@@ -2,6 +2,7 @@
 import analyzer from './analyzer.js';
 
 const textarea = document.getElementsByName('user-input')[0];
+textarea.focus();
 
 // Actualizar los valores iniciales en el HTML
 // document.querySelector('.metrics[data-testid="word-count"]').textContent = "Palabras: 0";
@@ -14,7 +15,7 @@ const textarea = document.getElementsByName('user-input')[0];
 document.querySelector('.metrics[data-testid="word-count"]').textContent = "0";  
 
 function start() {
-  
+
   const text = textarea.value;
   const wordCount = analyzer.getWordCount(text);
   const charCount = analyzer.getCharacterCount(text);
