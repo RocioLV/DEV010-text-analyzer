@@ -43,7 +43,7 @@ const analyzer = {
 
   getAverageWordLength: (text) => {    
     //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
-    const words = text.split(/\s+/);
+    const words = text.split(/\s+/).filter(word => word !== '');
     let totalLength = 0;
   
     for (let i = 0; i < words.length; i++) {
@@ -52,13 +52,14 @@ const analyzer = {
     // return totalLength / words.length;  
     const averageLength = totalLength / words.length;
 
-    return averageLength.toFixed(2);
+    // return averageLength;
+    return parseFloat(averageLength.toFixed(2));
   },
 
   getNumberCount: (text) => {
     //TODO: esta función debe retornar cúantos números se encuentran en el parámetro `text` de tipo `string`.
     
-    const regex = /[-+]?\d+(\.\d+)?/g; // Expresión regular para encontrar números enteros y decimales
+    const regex = /(?<!\w)[-+]?\d+(\.\d+)?(?!\w)/g; // Expresión regular para encontrar números enteros y decimales
     const numbers = text.match(regex); // Utilizamos el método match() para encontrar todos los números
 
     if (numbers === null) {
@@ -73,32 +74,26 @@ const analyzer = {
       }
     }
 
-    return count.toFixed(2);
+    return count;
   },
-    
-  //   let count = 0;
-
-  //   for (let i = 0; i < text.length; i++) {
-  //     if (!isNaN(parseFloat(text[i]))) {
-  //       count++;
-  //     }  
-  //   }
-  //   return count;
-  // },
-
 
   getNumberSum: (text) => {
-    //TODO: esta función debe retornar la suma de todos los números que se encuentran en el parámetro `text` de tipo `string`.
+    const regex = /(?<!\w)[-+]?\d+(\.\d+)?(?!\w)/g; // Expresión regular para encontrar números enteros y decimales
+    const numbers = text.match(regex); // Utilizamos el método match() para encontrar todos los números
+  
+    if (numbers === null) {
+      return 0; // Si no se encuentran números, retornamos 0
+    } 
+  
     let sum = 0;
-
-    for (let i = 0; i < text.length; i++) {   
-      if (!isNaN(parseInt(text[i]))) {
-        sum += parseInt(text[i]); 
-        i += String(parseInt(text[i])).length - 1;
-      }  
+  
+    for (const number of numbers) {
+      sum += parseFloat(number); // Utilizamos parseFloat para convertir la cadena a número con decimales
     }
+  
     return sum;
   },
+  
 }
 
 export default analyzer;

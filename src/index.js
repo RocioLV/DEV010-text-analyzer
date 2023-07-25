@@ -2,21 +2,14 @@
 import analyzer from './analyzer.js';
 
 const textarea = document.getElementsByName('user-input')[0];
-textarea.focus();
 
-// Actualizar los valores iniciales en el HTML
-// document.querySelector('.metrics[data-testid="word-count"]').textContent = "Palabras: 0";
-// document.querySelector('.metrics[data-testid="character-count"]').textContent = "Caracteres: 0";
-// document.querySelector('.metrics[data-testid="character-no-spaces-count"]').textContent = "Caracteres sin espacios: 0";
-// document.querySelector('.metrics[data-testid="number-count"]').textContent = "Numeros: 0";
-// document.querySelector('.metrics[data-testid="number-sum"]').textContent = "Suma total: 0";
-// document.querySelector('.metrics[data-testid="word-length-average"]').textContent = "Longitud media de palabras: 0";
+textarea.focus();
 
 document.querySelector('.metrics[data-testid="word-count"]').textContent = "0";  
 
 function start() {
 
-  const text = textarea.value;
+  const text = textarea.value.trim();
   const wordCount = analyzer.getWordCount(text);
   const charCount = analyzer.getCharacterCount(text);
   const charNoSpaces = analyzer.getCharacterCountExcludingSpaces(text);
@@ -44,17 +37,11 @@ textarea.addEventListener('keyup', () => {
   start(); // llamar start() aquí dentro del manejador
 })
 
-
-// // Agregar el evento click para limpiar el texto del textarea
-// document.getElementByName('reset-button').addEventListener('click', function() {
-//   textarea.value = '';
-//   start(); // Actualizar las métricas después de limpiar el texto
-// });
-
 const resetButton = document.getElementById('reset-button');
 
 resetButton.addEventListener('click', () => {
-  textarea.value = '';
+  textarea.value = "";
+  start();
 })
 
 // Botón para limpiar textarea

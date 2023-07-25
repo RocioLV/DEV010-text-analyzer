@@ -16,15 +16,15 @@
     <h1>🧐 Analizador de texto</h1>
   </header>
 
-  <div class="instructions"><br>
-    <li>Instrucciones para usar el analizador de texto:</li><br>
+  <div class="styles"><br>
+    <li> Instrucciones para usar el analizador de texto:</li><br>
     <li> 1. Ingresa el texto que deseas analizar en el cuadro de texto.</li><br>
     <li> 2. La herramienta procesará el texto utilizando técnicas de procesamiento del lenguaje natural y análisis estadístico.</li><br> 
     <li> 3. Obtendrás una variedad de métricas, como el conteo de palabras, caracteres, longitud media de palabras, recuento de números y su suma. Estas te darán información básica sobre la estructura del texto.</li><br>
   </div><br>
 
   <main>
-    <ul>
+    <ul class="styles">
       <li  class="metrics" data-testid="word-count"></li>
       <li  class="metrics" data-testid="character-count"></li>
       <li  class="metrics" data-testid="character-no-spaces-count"></li>
@@ -34,10 +34,9 @@
     </ul>
   </main><br>
 
-  <div>
-    <textarea name="user-input" rows="4" cols="50" placeholder="Ingresar texto...">
-    </textarea><br>
-  </div>
+  <div class="styles">
+    <textarea name="user-input" rows="4" cols="50" placeholder="Ingresar texto..."></textarea>
+  </div><br>
 
   <button type="reset" id="reset-button">Limpiar texto</button><br>
 
