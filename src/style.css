@@ -27,12 +27,12 @@ ul {
 }
 
 header {
-    font-size: 25px;
+    font-size: 20px;
     margin: 10px;
     justify-content: center;
     color: white;
     display: flex;
-    padding: 30px;
+    padding: 10px;
 }
 
 textarea:hover {
@@ -44,12 +44,12 @@ textarea:hover {
     background:fixed;
     /* border: 2px solid ; */
     margin: 3px;
-    border: 20px;
+    border: 10px;
     padding: 0px;
-    font-size: 20px;
+    font-size: 17px;
     color: white;
     width: 150px;
-    height: 20vh;
+    height: 10vh;
     background-color: #A12568;
     align-items: center;
     /* border-radius: 10px; */
@@ -65,7 +65,7 @@ textarea:hover {
     color:black;
     border-radius: 10px;
     border: 3px #666666;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 #reset-button:hover {
@@ -76,11 +76,11 @@ textarea:hover {
 
 footer {
     color: white;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .styles {
-    font-size: 20px;
+    font-size: 17px;
     color: white;
     list-style-type: none;
     justify-content: center;
