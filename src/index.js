@@ -1,14 +1,18 @@
 // index.js
 import analyzer from './analyzer.js';
 
-const textarea = document.getElementsByName('user-input')[0];
+const textarea = document.querySelector('[name="user-input"]');
+const wordCountElement = document.querySelector('.metrics[data-testid="word-count"]');
+const charCountElement = document.querySelector('.metrics[data-testid="character-count"]');
+const charNoSpacesElement = document.querySelector('.metrics[data-testid="character-no-spaces-count"]');
+const wordLengthElement = document.querySelector('.metrics[data-testid="word-length-average"]');
+const numCountElement = document.querySelector('.metrics[data-testid="number-count"]');
+const numSumElement = document.querySelector('.metrics[data-testid="number-sum"]');
 
 textarea.focus();
+wordCountElement.textContent = "0";
 
-document.querySelector('.metrics[data-testid="word-count"]').textContent = "0";  
-
-function start() {
-
+function updateMetrics() {
   const text = textarea.value.trim();
   const wordCount = analyzer.getWordCount(text);
   const charCount = analyzer.getCharacterCount(text);
@@ -17,104 +21,22 @@ function start() {
   const numCount = analyzer.getNumberCount(text);
   const numSum = analyzer.getNumberSum(text);
 
-  // Actualizar los elementos HTML con los resultados
-  document.querySelector('.metrics[data-testid="word-count"]').textContent = "Recuento de palabras: " + wordCount;
-  document.querySelector('.metrics[data-testid="character-count"]').textContent = "Recuento de caracteres: " + charCount.toString();
-  document.querySelector('.metrics[data-testid="character-no-spaces-count"]').textContent = "Caracteres sin espacios: " + charNoSpaces.toString();
-  document.querySelector('.metrics[data-testid="word-length-average"]').textContent = "Longitud media de palabras: " + wordLength.toString();
+  wordCountElement.textContent = `Recuento de palabras: ${wordCount}`;
+  charCountElement.textContent = `Recuento de caracteres: ${charCount}`;
+  charNoSpacesElement.textContent = `Caracteres sin espacios: ${charNoSpaces}`;
+  wordLengthElement.textContent = `Longitud media de palabras: ${wordLength}`;
 
   if (numCount !== null) {
-    document.querySelector('.metrics[data-testid="number-count"]').textContent = "Recuento de números: " + numCount;
-    document.querySelector('.metrics[data-testid="number-sum"]').textContent = "Suma total de números: " + numSum;
+    numCountElement.textContent = `Recuento de números: ${numCount}`;
+    numSumElement.textContent = `Suma total de números: ${numSum}`;
   }
 }
 
-// Llamar a la función start para actualizar los valores iniciales en el HTML
-start();
+updateMetrics();
 
-// Agregar el evento keyup para actualizar los resultados cuando la usuaria escriba en el textarea
-textarea.addEventListener('keyup', () => {
-  start(); // llamar start() aquí dentro del manejador
-})
+textarea.addEventListener('keyup', updateMetrics);
 
-const resetButton = document.getElementById('reset-button');
-
-resetButton.addEventListener('click', () => {
+document.getElementById('reset-button').addEventListener('click', () => {
   textarea.value = "";
-  start();
-})
-
-// Botón para limpiar textarea
-// const button = document.getElementById('reset-button');
-// textarea():
-
-// button.addEventListener('click', function() {
-//   textarea.value = '';
-// });
-
-
-// //
-// const textarea = document.getElementsByName("user-input")[0];
-
-// textarea.addEventListener('keyup', () =>{
-//   const wordCount = analyzer.getWordCount(text);
-//   const charCount = analyzer.getCharacterCount(text);
-//   const charNoSpaces = analyzer.getCharacterCountExcludingSpaces(text);
-//   const wordLength = analyzer.getAverageWordLength(text);
-//   const numCount = analyzer.getNumberCount(text);
-//   const numSum = analyzer.getNumberSum(text);
-// },
-
-// document.querySelector('[data-testid="word-count"]').textContent = "Palabras: " + wordCount;
-// document.querySelector('[data-testid="character-count"]').textContent = "Caracteres: " + charCount.toString();
-// document.querySelector('[data-testid="character-no-spaces-count"]').textContent = "Caracteres sin espacios: " + charNoSpaces.toString();
-// document.querySelector('[data-testid="word-length-average"]').textContent = "Longitud media de palabras: " + wordLength.toString();
-
-//   if(numCount !== null){
-//     document.querySelector('[data-testid="number-count"]').textContent = "Recuento de números: " + numCount;
-//     document.querySelector('[data-testid="number-sum"]').textContent = "Suma total de números: " + numSum;
-//   };
-  
-//PRUEBAS PRUEBAS PRUEBAS
-
-// function start() {
-//   const wordCount = analyzer.getWordCount(textarea.value);
-//   console.log("Word count:", wordCount);
-// }
-
-// textarea.addEventListener('keyup', start)
-
-
-// const button = document.getElementById('reset-button');
-// const textarea = document.querySelector('textarea[name="user-input"]');
-
-// button.addEventListener('click', function() {
-//   textarea.value = '';
-// });
-
-// const textarea = document.getElementsByName("user-input")[0];
-
-// METRICAS
-// document.querySelector('[data-testid="word-count]').textContent = "Palabras: 0";
-
-// function start (){
-//   analyzer.getWordCount(textarea.value);
-//   // console.log(analyzer.getWordCount(textarea.value)) //invocación de la función
-// }
-
-
-
-
-
-// guardar el valor de analyzer.getWordCount(textarea.value) en una variables
-// selector del dom llama al LI word-count
-// innerText o innerHTML + la variable que guarde el valor de analyzer.getWordCount(textarea.value))
-
-// console.log(analyzer.getWordCount(textarea.value))
-
-
-
-
-
-
-
+  updateMetrics();
+});

@@ -3,108 +3,144 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    font-weight: bold;
 }
 
 body {
-    /* display: center; */
-    /* justify-content: center;
-    align-items: center; */
-    height: 80vh;
-    text-align: center;
-    /* background: url(img/library2.jpg) no-repeat center/cover; */
-    background: #2A0944;
-}
-
-ul {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    list-style-type: none;
-    padding: 10px;
-    margin: 0px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: white;
+    text-align: center;
 }
 
 header {
-    font-size: 20px;
-    margin: 10px;
-    justify-content: center;
-    color: white;
-    display: flex;
-    padding: 10px;
+    padding: 20px;
+    text-align: center;
 }
 
-textarea:hover {
-    cursor: pointer;
-    background-color: #eee;
+.instructions-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    max-width: 600px;
+}
+
+.instructions {
+    text-align: left;
+    list-style-type: none;
+}
+
+.instructions li {
+    margin-bottom: 10px;
+    font-size: 0.9rem; /* Ajustar tamaño de fuente */
+}
+
+.metrics-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .metrics {
-    background:fixed;
-    /* border: 2px solid ; */
-    margin: 3px;
-    border: 10px;
-    padding: 0px;
-    font-size: 17px;
-    color: white;
-    width: 150px;
-    height: 10vh;
     background-color: #A12568;
-    align-items: center;
-    /* border-radius: 10px; */
-    justify-content: center;
-    display:inline-flex;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    font-size: 1.2rem; /* Ajustar tamaño de fuente */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añadir sombra */
+    transition: transform 0.3s;
+}
+
+.metrics:hover {
+    transform: scale(1.05);
+}
+
+.textarea-container {
+    margin: 20px;
+}
+
+textarea[name="user-input"] {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    font-size: 1rem; /* Ajustar tamaño de fuente */
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añadir sombra */
+    resize: none;
 }
 
 #reset-button {
-    height: 50px;
-    width: 200px;
-    align-items: center;
+    padding: 10px 20px;
+    font-size: 1rem; /* Ajustar tamaño de fuente */
+    border-radius: 8px;
+    border: none;
     background-color: #FEC260;
-    color:black;
-    border-radius: 10px;
-    border: 3px #666666;
-    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añadir sombra */
 }
 
 #reset-button:hover {
-  cursor: pointer;
-  transition: all 0.2s;
-  background-color: #3B185F;
+    background-color: #3B185F;
+    transform: scale(1.05);
 }
 
 footer {
-    color: white;
-    font-size: 17px;
-}
-
-.styles {
-    font-size: 17px;
-    color: white;
-    list-style-type: none;
-    justify-content: center;
-    margin: 0 20px;
-    padding: 0 20px;
-    border: 0 20px;
-}
-
-.styles.textarea {
-    background-color: #dddddd;
-    color: #666666;
-    font-size: 20px;
-    margin: 30px;
-    border-radius: 10px;
-    border: 2px solid transparent;
-    transition: all 0.2s;
-    align-items: center;
-    display: block;
-}
-
-textarea[name="user-input"]{
-    font-size: 20px;
-    border: 10px;
+    margin-top: auto;
     padding: 20px;
-    margin: 20px;
-    align-items: center;
+    text-align: center;
+}
+
+/* Media Queries para Responsividad */
+
+@media (max-width: 768px) {
+    .metrics-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .metrics {
+        width: 80%;
+    }
+
+    .textarea-container textarea {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 1.5rem; /* Ajustar tamaño de fuente */
+    }
+
+    .instructions li {
+        font-size: 0.9rem; /* Ajustar tamaño de fuente */
+    }
+
+    .metrics {
+        font-size: 1rem; /* Ajustar tamaño de fuente */
+    }
+
+    .textarea-container textarea {
+        font-size: 0.9rem; /* Ajustar tamaño de fuente */
+    }
+
+    #reset-button {
+        font-size: 0.9rem; /* Ajustar tamaño de fuente */
+    }
+
+    footer {
+        font-size: 0.9rem; /* Ajustar tamaño de fuente */
+    }
 }
