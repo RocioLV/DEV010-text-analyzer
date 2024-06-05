@@ -66,6 +66,9 @@ Para realizar este proyecto se utilizó como referencia el boilerplate que entre
 
 El diseño es minimalista y contiene una paleta de colores cálida. Muestra instrucciones para el uso del Analizador de Texto, luego contiene las métricas, la caja para introducir el texto y el botón para limpiar con color de mayor contraste para facilitar la experiencia de la usuaria.
 
+![Descripción de la imagen](src/img/text-analyzer-web.png)
 
-![TextAnalyzer](https://github.com/RocioLV/DEV010-text-analyzer/assets/138071814/627f804f-0093-4ab9-9507-7ba65063d58f)
 
+<!-- ![TextAnalyzer](https://github.com/RocioLV/DEV010-text-analyzer/assets/138071814/627f804f-0093-4ab9-9507-7ba65063d58f) -->
+
+# Analizador-de-texto
