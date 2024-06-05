@@ -70,5 +70,3 @@ El diseño es minimalista y contiene una paleta de colores cálida. Muestra inst
 
 
 <!-- ![TextAnalyzer](https://github.com/RocioLV/DEV010-text-analyzer/assets/138071814/627f804f-0093-4ab9-9507-7ba65063d58f) -->
-
-# Analizador-de-texto
